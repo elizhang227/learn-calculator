@@ -8,12 +8,6 @@ const input = document.getElementById('input'), // input/output button
     
 let resultDisplayed = false; // flag to keep an eye on what output is displayed
 
-// adding click handlers to number buttons
-// number.forEach(function(numero) {
-//     numero.addEventListener('click', function() {
-//         input.innerHTML += this.innerHTML;
-//     });
-// });
 Array.from(number).map(numero => {
     numero.addEventListener('click', function() {
         let string = input.innerHTML;
@@ -22,12 +16,10 @@ Array.from(number).map(numero => {
         if (resultDisplayed === false) {
             input.innerHTML += this.innerHTML;
         }
-        // else if (
-        //     resultDisplayed === true && lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/"
-        // )   {
-        //         resultDisplayed = false;
-        //         input.innerHTML += this.innerHTML;
-        //     }
+        else if (resultDisplayed === true && lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/") {
+                resultDisplayed = false;
+                input.innerHTML += this.innerHTML;
+            }
         else {
             resultDisplayed = false;
             input.innerHTML = "";
@@ -67,7 +59,7 @@ result.addEventListener('click', function() {
     let multiply = operatorsArray.indexOf("*");
     while (multiply != -1) {
         numbersArray.splice(multiply, 2, numbersArray[multiply] * numbersArray[multiply + 1]);
-        operatorsArray.splice(multiply, 1);
+        operatorsArray.splice(multiply, 1); // removes one instance of the multiply, effectively deletes it from array because no replacement is given
         multiply = operatorsArray.indexOf('*');
     }
 
@@ -92,7 +84,7 @@ result.addEventListener('click', function() {
         subtract = operatorsArray.indexOf('-');
     }
 
-    //resultDisplayed = true;
+    resultDisplayed = true;
     input.innerHTML = numbersArray;
 
 });
