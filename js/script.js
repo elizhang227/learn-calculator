@@ -22,12 +22,12 @@ Array.from(number).map(numero => {
         if (resultDisplayed === false) {
             input.innerHTML += this.innerHTML;
         }
-        else if (
-            resultDisplayed === true && lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/"
-        )   {
-                resultDisplayed = false;
-                input.innerHTML += this.innerHTML;
-            }
+        // else if (
+        //     resultDisplayed === true && lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/"
+        // )   {
+        //         resultDisplayed = false;
+        //         input.innerHTML += this.innerHTML;
+        //     }
         else {
             resultDisplayed = false;
             input.innerHTML = "";
