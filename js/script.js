@@ -54,7 +54,6 @@ result.addEventListener('click', function() {
     });
 
     const operatorsArray = currentString.replace(/[0-9]|\./g, "").split("");
-    console.log(numbersArray);
 
     let multiply = operatorsArray.indexOf("*");
     while (multiply != -1) {
